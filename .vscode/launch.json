@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": "--model resnet152 --pretrained_weights pretrained_weights/r3d152_KM_200ep.pth"
+            "terminal.integrated.shell.linux": "/usr/bin/tmux",
+            "terminal.integrated.shellArgs.linux": [
+                "new-session",
+                "-A",
+                "-s",
+                "main"
+            ]
+        }
+    ]
+}
