@@ -12,6 +12,9 @@ Yes. Lots of it. This repo is quite large - I can't push --force to it due to gi
 ## Where are the model weights?
 Not in this repo due to size constraints, but I'm happy to send them to you! I don't think they'll be very useful however. Reach out on twitter or discord dm if you'd like them.
 
+## Do you actually need to use docker?
+I don't think so, you should be able to pip install the requirements and be good to go. YMMV
+
 # The original readme file
 
 ## Kaggle Ink Detection 4th solution by POSCO DX - Heeyoung Ahn
