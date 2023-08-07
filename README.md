@@ -1,6 +1,6 @@
 # Early Grand Prize Scroll Finetuning Attempts
 
-## Why is this so disorganized?
+## Where should I start?
 The intersting file is finetune.py. Think of this repo moreso as a messy workbench than a finished product.
 
 ## Why did you use the fourth place submission?
