@@ -1,4 +1,17 @@
-# Kaggle Ink Detection 4th solution by POSCO DX - Heeyoung Ahn
+# Early Grand Prize Scroll Finetuning Attempts
+
+## Why is this so disorganized?
+The intersting file is finetune.py. Think of this repo as a messy workbench than a finished product. Nonetheless, I personally find the results here 
+
+## Why did you use the fourth place submission?
+All the top placing kaggle submissions all seem pretty similar. The fourth place team posted their training code first and I found their code pretty straightforward. I did not choose this one for archetecture reasons and I don't think the model archetecture is a signifigant factor in the results.
+
+## Memory?
+Yes. Lots of it. This repo is quite large - I can't push --force to it due to github size constraints - and I had trouble running the traiing code locally on my 12GB 2080ti. I did all this work on a Lambda H100 although you sould be able to get away with any GPU that has >20gb vram.
+
+# The original readme file
+
+## Kaggle Ink Detection 4th solution by POSCO DX - Heeyoung Ahn
 
 
 Hello!
