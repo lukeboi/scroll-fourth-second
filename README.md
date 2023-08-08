@@ -19,6 +19,7 @@ These results indicate that untuned or finetuned kaggle ink detection models are
 Probably some combination of:
 - Not enough data for finetuning.
   - The fragment dataset is 50+ letters. I'm finetuning on about 3 letters.
+- The model is learning and overfitting on papyrus fiber patterns, not the crakle pattern. 
 - Too large a model for so little data.
   - As with most things in ML, the winning formula for the kaggle competition was to increase paramater count. This does not make those models well-suited to finetune on small amounts of data.
   - In other words, the parameter count to finetuning dataset size ratio is way too small, a la llm scaling laws.
