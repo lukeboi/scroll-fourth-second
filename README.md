@@ -10,7 +10,7 @@ Here is one finetuning result. As you can see, the model does a good job of fitt
 Here's another example. Again, the model picks up the letters it is finetuned on but didn't pick up any other instances of the crackle pattern.
 ![alt text](https://github.com/lukeboi/scroll-fourth-second/blob/master/inference/1688370140/pred_raw_start18_scaled2.png)
 
-In this case, the model is predicting strong ink signals at a deeper level than the pi. However, the fact that these predictions appear in pairs suggest that the model is overfitting on the pi/iota pattern. Extensive manual analysis of the predicted ink locations did not reveal a crackle pattern, suggesting that the model is hallucinating. 
+In this case, the model is predicting strong ink signals at a deeper layer (14 in this case) than the pi (at layer ~32). However, the fact that these predictions appear in pairs suggest that the model is overfitting on the pi/iota pattern. Extensive manual analysis of the predicted ink locations did not reveal a crackle pattern, suggesting that the model is hallucinating. [View all the layers here](https://github.com/lukeboi/scroll-fourth-second/blob/master/inference/1688399679/pred_raw_start12_scaled2.png)
 ![alt text](https://github.com/lukeboi/scroll-fourth-second/blob/master/inference/1688399679/pred_raw_start14_scaled2.png)
 
 These results indicate that untuned or finetuned kaggle ink detection models are not sufficient to detect ink in the grand prize scrolls.
