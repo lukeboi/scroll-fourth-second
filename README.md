@@ -10,7 +10,7 @@ Here is one finetuning result. As you can see, the model does a good job of fitt
 Here's another example. Again, the model picks up the letters it is finetuned on but didn't pick up any other instances of the crackle pattern.
 ![alt text](https://github.com/lukeboi/scroll-fourth-second/blob/master/inference/1688370140/pred_raw_start18_scaled2.png)
 
-In this case, the model is predicting strong ink signals at deeper levels. However, the fact that these predictions appear in pairs suggest that the model is overfitting on the pi/iota pair. Extensive manual analysis of the predicted ink locations did not reveal a crackle pattern. 
+In this case, the model is predicting strong ink signals at a deeper level than the pi. However, the fact that these predictions appear in pairs suggest that the model is overfitting on the pi/iota pattern. Extensive manual analysis of the predicted ink locations did not reveal a crackle pattern, suggesting that the model is hallucinating. 
 ![alt text](https://github.com/lukeboi/scroll-fourth-second/blob/master/inference/1688399679/pred_raw_start14_scaled2.png)
 
 These results indicate that untuned or finetuned kaggle ink detection models are not sufficient to detect ink in the grand prize scrolls.
@@ -21,11 +21,22 @@ Probably some combination of:
   - The fragment dataset is 50+ letters. I'm finetuning on about 3 letters.
 - Too large a model for so little data.
   - As with most things in ML, the winning formula for the kaggle competition was to increase paramater count. This does not make those models well-suited to finetune on small amounts of data.
-  - In other words, the paramaeter count to dataset size ratio is way too small, a la llm scaling laws.
+  - In other words, the parameter count to finetuning dataset size ratio is way too small, a la llm scaling laws.
 - The fragment ink signal is so different from the crackle texture that attempting to finetune a model on both isn't useful.
   - The differences in scan resolution and background colors probably also don't help.
 - The model is finetuning properly, but there just isn't any ink signal present.
   - I hope not, but this is a possibility.
+
+## Next steps
+- Create models that are not trained on fragments, just crackle patterns.
+  - I have been working on this recently
+- Better unwrapping & segmentation algorithms
+- Good tools to find crackle patterns & label them
+- Better understand the fragment ink signals
+  - This is still very underexplored!
+- Improved augmentations
+- Synthetic crackle dataset generation
+- and much, much more!
 
 ## Where should I start in this repo?
 The interesting file is finetune.py. There are training logs in checkpoints/ as well. Most things were shuffled around in the repo as I made different attempts and tried different things. Think of this repo moreso as a messy workbench than a finished product.
