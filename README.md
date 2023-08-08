@@ -1,16 +1,36 @@
 # Early Grand Prize Scroll Finetuning Attempts
 
-## Where should I start?
-The intersting file is finetune.py. Think of this repo moreso as a messy workbench than a finished product.
+In this repo, I took the [fourth place kaggle submission](https://github.com/AhnHeeYoung/Competition/tree/master/kaggle) and finetuned one of its models on a mask of a few letters near [Casey's Pi](https://twitter.com/CJHandmer/status/1674835928928649265). The grand prize data is scaled up 2x to account for the 8um scan resolution vs the 4um fragment scan resoultion. Despite multiple attempts, I struggled to get the model to generalize and reliably predict ink.
+
+[Here is the mask used for finetuning](https://github.com/lukeboi/scroll-fourth-second/blob/master/promising_cropped_7_2/inital_mask.png)
+
+Here is one finetuning result. As you can see, the model does a good job of fitting on the masked letters but doesn't do a good job of picking up other nearby letters. Each frame of the gif are different depths of the fragment data:
+![alt text](https://github.com/lukeboi/scroll-fourth-second/blob/master/m/animation.gif)
+
+
+## Why didn't this work?
+Probably some combination of:
+- Not enough data for finetuning.
+  - The fragment dataset is ~50 letters. I'm finetuning on about 3 letters.
+- Too large a model for so little data.
+  - As with most things in ML, the overarching winning formula for the kaggle competition was to increase paramater count. This does not make it easy to finetune on small amounts of data.
+  - In other words, the paramaeter count to dataset size ratio is way too small, a la llm scaling laws.
+- The fragment ink signal is so different from the crackle texture that attempting to finetune a model on both isn't useful.
+  - The differences in scan resolution and background colors probably also don't help.
+- The model is finetuning properly, but there just isn't any ink signal present.
+  - I hope not, but this is a possibility.
+
+## Where should I start in this repo?
+The interesting file is finetune.py. There are training logs in checkpoints/ as well. Most things were shuffled around int he repo as I made different attempts. Think of this repo moreso as a messy workbench than a finished deal.
 
 ## Why did you use the fourth place submission?
-All the top placing kaggle submissions all seem pretty similar. The fourth place team posted their training code first and I found their code pretty straightforward. I did not choose this one for archetecture reasons and I don't think the model archetecture is a signifigant factor in the results.
+All the top placing kaggle submissions seem pretty similar. The fourth place team posted their training code first and I found their code pretty straightforward. I did not choose this one for architecture reasons and I don't think the model architecture is a significant factor in the results.
 
 ## Memory?
-Yes. Lots of it. This repo is quite large - I can't push --force to it due to github size constraints - and I had trouble running the traiing code locally on my 12GB 2080ti. I did all this work on a Lambda H100 although you sould be able to get away with any GPU that has >20gb vram.
+Yes. Lots of it. This repo is quite large - I can't "push --force"\ to it due to github size constraints - and I had trouble running the traiing code locally on my 12GB 2080ti. I did all this work on a Lambda H100 although you sould be able to get away with any GPU that has >20gb vram.
 
 ## Where are the model weights?
-Not in this repo due to size constraints, but I'm happy to send them to you! I don't think they'll be very useful however. Reach out on twitter or discord dm if you'd like them.
+Not in this repo due to size constraints, but I'm happy to send them to you! I don't think they'll be very useful however. Reach out on twitter or discord if you'd like them.
 
 ## Do you actually need to use docker?
 I don't think so, you should be able to pip install the requirements and be good to go. YMMV
