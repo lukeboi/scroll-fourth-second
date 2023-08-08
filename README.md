@@ -24,7 +24,7 @@ Probably some combination of:
   - As with most things in ML, the winning formula for the kaggle competition was to increase paramater count. This does not make those models well-suited to finetune on small amounts of data.
   - In other words, the parameter count to finetuning dataset size ratio is way too small, a la llm scaling laws.
 - The fragment ink signal is so different from the crackle texture that attempting to train a model on both isn't useful.
-  - The differences in scan resolution and background colors probably also don't help.
+  - The differences in scan resolution and background colors probably doesn't help.
 - The fourth place model is especially bad at finetuning
   - Although I see no reason to think this is the case.
 - The model is finetuning properly, but there just isn't any ink signal present.
