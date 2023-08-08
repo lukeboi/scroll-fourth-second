@@ -25,6 +25,8 @@ Probably some combination of:
   - In other words, the parameter count to finetuning dataset size ratio is way too small, a la llm scaling laws.
 - The fragment ink signal is so different from the crackle texture that attempting to train a model on both isn't useful.
   - The differences in scan resolution and background colors probably also don't help.
+- The fourth place model is especially bad at finetuning
+  - Although I see no reason to think this is the case.
 - The model is finetuning properly, but there just isn't any ink signal present.
   - I hope not, but this is a possibility.
 
