@@ -4,7 +4,7 @@ In this repo, I took the [fourth place kaggle submission](https://github.com/Ahn
 
 [Here is the mask used for finetuning](https://github.com/lukeboi/scroll-fourth-second/blob/master/promising_cropped_7_2/inital_mask.png)
 
-Here is one finetuning result. As you can see, the model does a good job of fitting on the masked letters but doesn't do a good job of picking up other nearby letters. Each frame of the gif are different depths of the fragment data:
+Here is one result. As you can see, the model does a good job of fitting on the masked letters but doesn't do a good job of picking up other nearby letters. Each frame of the gif are different depth samples of the scroll1111 data:
 ![alt text](https://github.com/lukeboi/scroll-fourth-second/blob/master/m/animation.gif)
 
 Here's another example. Again, the model picks up the letters it is finetuned on but didn't pick up any other instances of the crackle pattern.
