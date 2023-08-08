@@ -1,4 +1,4 @@
-# Early Grand Prize Scroll Kaggle Finetuning
+# Early Grand Prize Scroll Kaggle Finetuning Experiments
 
 In this repo, I took the [fourth place kaggle submission](https://github.com/AhnHeeYoung/Competition/tree/master/kaggle) and finetuned one of its models on a mask of a few letters near [Casey's Pi](https://twitter.com/CJHandmer/status/1674835928928649265). After finetuning, I fed a larger part of the fragment through the model to see if it could identify more letters. The grand prize data is scaled up 2x to account for the 8um scan resolution vs the 4um fragment scan resoultion. Despite multiple attempts, I struggled to get the model to generalize and reliably predict ink.
 
